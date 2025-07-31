@@ -4,9 +4,10 @@ import { Send } from 'lucide-react';
 interface InputAreaProps {
   onSendMessage: (content: string) => void;
   isLoading: boolean;
+  isDarkMode?: boolean;
 }
 
-export default function InputArea({ onSendMessage, isLoading }: InputAreaProps) {
+export default function InputArea({ onSendMessage, isLoading, isDarkMode = true }: InputAreaProps) {
   const [input, setInput] = useState('');
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
@@ -32,6 +33,11 @@ export default function InputArea({ onSendMessage, isLoading }: InputAreaProps) 
     }
   }, [input]);
 
+  const bgClass = isDarkMode ? 'bg-zinc-900/40' : 'bg-gray-100';
+  const textClass = isDarkMode ? 'text-zinc-100' : 'text-gray-900';
+  const placeholderClass = isDarkMode ? 'placeholder-zinc-600' : 'placeholder-gray-500';
+  const hoverBgClass = isDarkMode ? 'hover:bg-zinc-900/50' : 'hover:bg-gray-200';
+
   return (
     <div className="flex items-center space-x-4">
       <div className="flex-1">
@@ -41,7 +47,7 @@ export default function InputArea({ onSendMessage, isLoading }: InputAreaProps) 
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={handleKeyDown}
           placeholder="Pergunte qualquer coisa..."
-          className="w-full bg-zinc-900/30 text-zinc-100 placeholder-zinc-600 rounded-3xl px-6 py-4 resize-none font-extralight leading-relaxed border-0 focus:ring-2 focus:ring-yellow-600/50 focus:outline-none transition-all duration-500 hover:bg-zinc-900/40 backdrop-blur-sm"
+          className={`w-full ${bgClass} ${textClass} ${placeholderClass} rounded-3xl px-6 py-4 resize-none font-extralight leading-relaxed border-0 focus:ring-2 focus:ring-yellow-600/50 focus:outline-none transition-all duration-500 ${hoverBgClass} backdrop-blur-sm`}
           rows={1}
           disabled={isLoading}
           style={{ minHeight: '40px' }}

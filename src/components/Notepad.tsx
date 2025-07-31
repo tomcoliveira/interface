@@ -1,6 +1,10 @@
 import React, { useState, useRef } from 'react';
 
-export default function Notepad() {
+interface NotepadProps {
+  isDarkMode?: boolean;
+}
+
+export default function Notepad({ isDarkMode = true }: NotepadProps) {
   const [content, setContent] = useState('');
   const [bulletMode, setBulletMode] = useState(false);
   const [currentColor, setCurrentColor] = useState(0); // 0=branco, 1=amarelo, 2=cinza
@@ -94,10 +98,13 @@ Cor atual: ${colorNames[currentColor]}
   const getTextColor = () => {
     switch (currentColor) {
       case 1: return '#ffb91a'; // amarelo
-      case 2: return '#a1a1aa'; // cinza
-      default: return '#ffffff'; // branco
+      case 2: return isDarkMode ? '#a1a1aa' : '#6b7280'; // cinza
+      default: return isDarkMode ? '#ffffff' : '#000000'; // branco/preto
     }
   };
+
+  const bgClass = isDarkMode ? 'bg-zinc-900/40' : 'bg-gray-100';
+  const indicatorBgClass = isDarkMode ? 'rgba(0,0,0,0.3)' : 'rgba(255,255,255,0.8)';
 
   return (
     <div className="h-full flex flex-col relative">
@@ -110,7 +117,7 @@ Cor atual: ${colorNames[currentColor]}
       
       {/* Indicador de cor */}
       {currentColor > 0 && (
-        <div className="absolute top-2 left-2 px-2 py-1 rounded text-xs font-light z-10" style={{backgroundColor: 'rgba(0,0,0,0.3)', color: getTextColor()}}>
+        <div className="absolute top-2 left-2 px-2 py-1 rounded text-xs font-light z-10" style={{backgroundColor: indicatorBgClass, color: getTextColor()}}>
           COR: {colorNames[currentColor].toUpperCase()}
         </div>
       )}
@@ -122,7 +129,7 @@ Cor atual: ${colorNames[currentColor]}
           value={content}
           onChange={(e) => setContent(e.target.value)}
           onKeyDown={handleKeyDown}
-          className="w-full h-full bg-zinc-900/30 rounded-xl p-4 font-extralight text-base leading-relaxed focus:outline-none resize-none selection:bg-yellow-600/30 focus:ring-2 focus:ring-yellow-600/50 transition-all duration-300 border-0"
+          className={`w-full h-full ${bgClass} rounded-xl p-4 font-extralight text-base leading-relaxed focus:outline-none resize-none selection:bg-yellow-600/30 focus:ring-2 focus:ring-yellow-600/50 transition-all duration-300 border-0`}
           style={{ 
             minHeight: '100%',
             color: getTextColor()
