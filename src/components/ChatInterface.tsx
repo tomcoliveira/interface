@@ -226,41 +226,6 @@ export default function ChatInterface() {
             </button>
           </div>
         </div>
-            <div className="flex items-center">
-              <History className="w-4 h-4 text-yellow-600" />
-            </div>
-          </div>
-          
-          <div className="flex-1 overflow-y-auto p-4">
-            <div className="space-y-1">
-              <div className="py-1 hover:bg-zinc-900/20 transition-colors cursor-pointer">
-                <div className="text-xs text-zinc-600 font-extralight mb-1">Hoje, 14:32</div>
-                <div className="text-base text-zinc-200 font-light">Sobre design de interfaces...</div>
-              </div>
-              
-              <div className="py-1 hover:bg-zinc-900/20 transition-colors cursor-pointer">
-                <div className="text-xs text-zinc-600 font-extralight mb-1">Hoje, 13:15</div>
-                <div className="text-base text-zinc-200 font-light">Análise de performance...</div>
-              </div>
-              
-              <div className="py-1 hover:bg-zinc-900/20 transition-colors cursor-pointer">
-                <div className="text-xs text-zinc-600 font-extralight mb-1">Ontem, 16:45</div>
-                <div className="text-base text-zinc-200 font-light">Estratégias de UX...</div>
-              </div>
-              
-              <div className="py-1 hover:bg-zinc-900/20 transition-colors cursor-pointer">
-                <div className="text-xs text-zinc-600 font-extralight mb-1">Ontem, 11:20</div>
-                <div className="text-base text-zinc-200 font-light">Implementação de APIs...</div>
-              </div>
-            </div>
-          </div>
-          
-          <div className="border-t border-zinc-800/70 p-6">
-            <button className="w-full h-12 border border-zinc-700 hover:border-zinc-600 rounded-xl text-zinc-400 hover:text-zinc-300 text-sm font-light transition-all duration-300">
-              Nova Conversa
-            </button>
-          </div>
-        </div>
 
         {/* Divisória Histórico */}
         <div className="hidden xl:flex items-center justify-center group relative">
