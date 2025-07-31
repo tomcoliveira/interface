@@ -302,6 +302,8 @@ export default function ChatInterface() {
                 📎
               </button>
             </div>
+          </div>
+        </div>
 
         {/* Divisória Notas */}
         <div className="hidden lg:flex items-center justify-center group relative">
