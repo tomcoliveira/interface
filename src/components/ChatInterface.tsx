@@ -276,10 +276,12 @@ export default function ChatInterface() {
                       <span className="text-yellow-600">{">_"}</span>
                       <span className={`${textClass} ml-1`}>Alcides</span>
                     </div>
+                    </div>
                     <div className="flex space-x-2">
                       <div className={`w-1.5 h-1.5 ${isDarkMode ? 'bg-zinc-600' : 'bg-gray-400'} rounded-full animate-pulse`}></div>
                       <div className={`w-1.5 h-1.5 ${isDarkMode ? 'bg-zinc-600' : 'bg-gray-400'} rounded-full animate-pulse delay-150`}></div>
                       <div className={`w-1.5 h-1.5 ${isDarkMode ? 'bg-zinc-600' : 'bg-gray-400'} rounded-full animate-pulse delay-300`}></div>
+                    </div>
                     </div>
                   </div>
                 </div>
@@ -295,13 +297,14 @@ export default function ChatInterface() {
               <div className="flex-1">
                 <InputArea onSendMessage={handleSendMessage} isLoading={isLoading} isDarkMode={isDarkMode} />
               </div>
+              </div>
               <button
                 onClick={() => fileInputRef.current?.click()}
                 className={`h-10 w-10 flex items-center justify-center border border-${isDarkMode ? 'zinc-600' : 'gray-300'} hover:border-yellow-600 rounded-xl transition-all duration-300 ${mutedTextClass} hover:text-yellow-600`}
               >
                 📎
               </button>
-              </div>
+            </div>
             </div>
           </div>
         </div>
