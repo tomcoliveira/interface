@@ -122,7 +122,7 @@ Cor atual: ${colorNames[currentColor]}
           value={content}
           onChange={(e) => setContent(e.target.value)}
           onKeyDown={handleKeyDown}
-          className="w-full h-full bg-zinc-900/20 rounded-xl p-4 font-extralight text-base leading-relaxed focus:outline-none resize-none selection:bg-yellow-600/30 focus:ring-2 focus:ring-yellow-600/50 transition-all duration-300 border-0"
+          className="w-full h-full bg-zinc-900/30 rounded-xl p-4 font-extralight text-base leading-relaxed focus:outline-none resize-none selection:bg-yellow-600/30 focus:ring-2 focus:ring-yellow-600/50 transition-all duration-300 border-0"
           style={{ 
             minHeight: '100%',
             color: getTextColor()

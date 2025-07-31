@@ -41,7 +41,7 @@ export default function InputArea({ onSendMessage, isLoading }: InputAreaProps) 
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={handleKeyDown}
           placeholder="Pergunte qualquer coisa..."
-          className="w-full bg-zinc-900/20 text-zinc-100 placeholder-zinc-600 rounded-3xl px-6 py-4 resize-none font-extralight leading-relaxed border-0 focus:ring-2 focus:ring-yellow-600/50 focus:outline-none transition-all duration-500 hover:bg-zinc-900/30 backdrop-blur-sm"
+          className="w-full bg-zinc-900/30 text-zinc-100 placeholder-zinc-600 rounded-3xl px-6 py-4 resize-none font-extralight leading-relaxed border-0 focus:ring-2 focus:ring-yellow-600/50 focus:outline-none transition-all duration-500 hover:bg-zinc-900/40 backdrop-blur-sm"
           rows={1}
           disabled={isLoading}
           style={{ minHeight: '40px' }}

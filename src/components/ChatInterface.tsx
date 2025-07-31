@@ -145,7 +145,7 @@ export default function ChatInterface() {
             </div>
           </div>
           
-          <div className="border-t border-zinc-900/50 p-6">
+          <div className="border-t border-zinc-800/70 p-6">
             <button className="w-full h-12 border border-zinc-700 hover:border-zinc-600 rounded-xl text-zinc-400 hover:text-zinc-300 text-sm font-light transition-all duration-300">
               Nova Conversa
             </button>
@@ -155,7 +155,7 @@ export default function ChatInterface() {
         {/* Divisória Histórico */}
         <div className="hidden xl:flex items-center justify-center group relative">
           <div 
-            className="w-1 h-full bg-transparent group-hover:bg-zinc-700/50 cursor-col-resize transition-colors duration-200"
+            className="w-1 h-full bg-transparent group-hover:bg-zinc-600/70 cursor-col-resize transition-colors duration-200"
             onMouseDown={() => handleMouseDown('history')}
           />
           <div className="absolute w-4 h-full cursor-col-resize" onMouseDown={() => handleMouseDown('history')} />
@@ -172,7 +172,7 @@ export default function ChatInterface() {
               
               {isLoading && (
                 <div className="flex justify-start mb-8 opacity-0 animate-fadeIn">
-                  <div className="max-w-2xl bg-zinc-900/30 rounded-3xl px-6 py-5 backdrop-blur-sm">
+                  <div className="max-w-2xl bg-zinc-900/40 rounded-3xl px-6 py-5 backdrop-blur-sm">
                     <div className="text-xs text-yellow-600 mb-3 font-light tracking-wider flex items-center space-x-1">
                       <span className="text-yellow-600">{">_"}</span>
                       <span className="text-white ml-1">Claude</span>
@@ -191,7 +191,7 @@ export default function ChatInterface() {
           </div>
 
           {/* Input do chat */}
-          <div className="border-t border-zinc-900/50 p-4">
+          <div className="border-t border-zinc-800/70 p-4">
             <div className="max-w-3xl mx-auto flex items-end space-x-3">
               <div className="flex-1">
                 <InputArea onSendMessage={handleSendMessage} isLoading={isLoading} />
@@ -203,7 +203,7 @@ export default function ChatInterface() {
         {/* Divisória Notas */}
         <div className="hidden lg:flex items-center justify-center group relative">
           <div 
-            className="w-1 h-full bg-transparent group-hover:bg-zinc-700/50 cursor-col-resize transition-colors duration-200"
+            className="w-1 h-full bg-transparent group-hover:bg-zinc-600/70 cursor-col-resize transition-colors duration-200"
             onMouseDown={() => handleMouseDown('notes')}
           />
           <div className="absolute w-4 h-full cursor-col-resize" onMouseDown={() => handleMouseDown('notes')} />
@@ -217,7 +217,7 @@ export default function ChatInterface() {
           <Notepad />
           
           {/* Botão enviar dos apontamentos - mesma altura que o input do chat */}
-          <div className="border-t border-zinc-900/50 p-4">
+          <div className="border-t border-zinc-800/70 p-4">
             <div className="flex justify-end">
               <button className="h-10 px-3 border border-yellow-600 bg-transparent hover:bg-yellow-600/10 rounded-xl transition-all duration-300 group backdrop-blur-sm disabled:opacity-50 disabled:cursor-not-allowed">
                 <span className="text-yellow-600 text-sm font-light group-hover:scale-110 transition-transform duration-300">

@@ -10,7 +10,7 @@ export default function Message({ message }: MessageProps) {
   
   return (
     <div className={`flex ${isUser ? 'justify-end' : 'justify-start'} mb-8 opacity-0 animate-fadeIn`}>
-      <div className={`max-w-2xl ${isUser ? 'bg-zinc-900/50' : 'bg-zinc-900/30'} rounded-3xl px-6 py-5 transition-all duration-500 hover:bg-opacity-60 backdrop-blur-sm`}>
+      <div className={`max-w-2xl ${isUser ? 'bg-zinc-900/60' : 'bg-zinc-900/40'} rounded-3xl px-6 py-5 transition-all duration-500 hover:bg-opacity-70 backdrop-blur-sm`}>
         {!isUser && (
           <div className="text-xs text-yellow-600 mb-3 font-light tracking-wider flex items-center space-x-1">
             <span className="text-yellow-600 text-xs">{'>_'}</span>
